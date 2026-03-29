@@ -35,7 +35,7 @@ public record FindPageRespTransfer<R extends RespTransfer>(
         @NotNull(message = "查询总条数不能为空") Long total,
         @NotNull(message = "页码不能为空") Integer pageNum,
         @NotNull(message = "分页大小不能为空") Integer pageSize
-) implements Transfer {
+) implements RespTransfer {
 
     @Override
     public FindPageRespTransfer<R> validate() {
