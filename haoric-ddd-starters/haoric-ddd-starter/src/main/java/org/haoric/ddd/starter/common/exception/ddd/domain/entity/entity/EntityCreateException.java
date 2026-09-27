@@ -1,0 +1,43 @@
+package org.haoric.ddd.starter.common.exception.ddd.domain.entity.entity;
+
+import org.haoric.ddd.starter.common.exception.error.code.ErrorCode;
+
+/**
+ * EntityCreateException
+ * <p>
+ * create 2025/08/10 08:28
+ * <p>
+ * update 2025/08/10 08:29
+ *
+ * @author Deng Haozhi
+ * @see org.haoric.ddd.starter.common.exception.ddd.domain.entity.entity.EntityException
+ * @since 1.0.0
+ */
+public class EntityCreateException extends org.haoric.ddd.starter.common.exception.ddd.domain.entity.entity.EntityException {
+
+    private static final ErrorCode ERROR_CODE = ErrorCode.DEN0100;
+
+    public EntityCreateException() {
+        super(null, ERROR_CODE, null, null);
+    }
+
+    public EntityCreateException(String message) {
+        super(null, ERROR_CODE, message, null);
+    }
+
+    public EntityCreateException(Throwable throwable) {
+        super(null, ERROR_CODE, null, throwable);
+    }
+
+    public EntityCreateException(String method, String message) {
+        super(method, ERROR_CODE, message, null);
+    }
+
+    public EntityCreateException(String message, Throwable throwable) {
+        super(null, ERROR_CODE, message, throwable);
+    }
+
+    public EntityCreateException(String method, String message, Throwable throwable) {
+        super(method, ERROR_CODE, message, throwable);
+    }
+}

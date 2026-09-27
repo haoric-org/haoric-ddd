@@ -1,0 +1,43 @@
+package org.haoric.ddd.starter.common.exception.ddd.infrastructure.data.record;
+
+import org.haoric.ddd.starter.common.exception.error.code.ErrorCode;
+
+/**
+ * DataRecordAddItemException
+ * <p>
+ * create 2025/08/09 00:18
+ * <p>
+ * update 2025/08/09 00:18
+ *
+ * @author Deng Haozhi
+ * @see org.haoric.ddd.starter.common.exception.ddd.infrastructure.data.record.DataRecordException
+ * @since 1.0.0
+ */
+public class DataRecordAddItemException extends org.haoric.ddd.starter.common.exception.ddd.infrastructure.data.record.DataRecordException {
+
+    private static final ErrorCode ERROR_CODE = ErrorCode.DDR0200;
+
+    public DataRecordAddItemException() {
+        super(null, ERROR_CODE, null, null);
+    }
+
+    public DataRecordAddItemException(String message) {
+        super(null, ERROR_CODE, message, null);
+    }
+
+    public DataRecordAddItemException(Throwable throwable) {
+        super(null, ERROR_CODE, null, throwable);
+    }
+
+    public DataRecordAddItemException(String method, String message) {
+        super(method, ERROR_CODE, message, null);
+    }
+
+    public DataRecordAddItemException(String message, Throwable throwable) {
+        super(null, ERROR_CODE, message, throwable);
+    }
+
+    public DataRecordAddItemException(String method, String message, Throwable throwable) {
+        super(method, ERROR_CODE, message, throwable);
+    }
+}

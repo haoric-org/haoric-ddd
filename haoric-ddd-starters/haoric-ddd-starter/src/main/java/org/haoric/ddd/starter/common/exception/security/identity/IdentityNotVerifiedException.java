@@ -1,0 +1,44 @@
+package org.haoric.ddd.starter.common.exception.security.identity;
+
+import org.haoric.ddd.starter.common.exception.error.code.ErrorCode;
+import org.haoric.ddd.starter.common.exception.security.SecurityException;
+
+/**
+ * IdentityNotVerifiedException
+ * <p>
+ * create 2025/01/09 17:42
+ * <p>
+ * update 2025/08/21 03:48
+ *
+ * @author Deng Haozhi
+ * @see java.lang.SecurityException
+ * @since 1.0.0
+ */
+public class IdentityNotVerifiedException extends SecurityException {
+
+    private static final ErrorCode ERROR_CODE = ErrorCode.SEC1001;
+
+    public IdentityNotVerifiedException() {
+        super(null, ERROR_CODE, null, null);
+    }
+
+    public IdentityNotVerifiedException(String message) {
+        super(null, ERROR_CODE, message, null);
+    }
+
+    public IdentityNotVerifiedException(Throwable throwable) {
+        super(null, ERROR_CODE, null, throwable);
+    }
+
+    public IdentityNotVerifiedException(String method, String message) {
+        super(method, ERROR_CODE, message, null);
+    }
+
+    public IdentityNotVerifiedException(String message, Throwable throwable) {
+        super(null, ERROR_CODE, message, throwable);
+    }
+
+    public IdentityNotVerifiedException(String method, String message, Throwable throwable) {
+        super(method, ERROR_CODE, message, throwable);
+    }
+}

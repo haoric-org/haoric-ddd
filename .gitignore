@@ -1,31 +1,92 @@
-### Build Tools ####
-.ddd
-.gradle
-/build/
-build/*
-!gradle/wrapper/gradle-wrapper.jar
+# =========================================================
+# Java / Build Artifacts
+# =========================================================
+
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+
 target/
-endless-ddd-generator.jar
-!.mvn/wrapper/maven-wrapper.jar
-ci/*/lib/*.jar
-### IDE ###
-.history/
-.DS_Store
-.vscode
-.idea
-*.iws
-*.iml
-*.ipr
-logs/*
-### Others ###
+build/
 dist/
+
+# Generated / temporary files
+*.ctxt
 *.log
-*.xml.versionsBackup
 *.swp
-.apt_generated
+*.versionsBackup
+
+# Crash logs
+hs_err_pid*
+replay_pid*
+
+
+# =========================================================
+# Gradle
+# =========================================================
+
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+
+
+# =========================================================
+# Maven
+# =========================================================
+
+.mvn/
+!.mvn/wrapper/maven-wrapper.jar
+
+
+# =========================================================
+# IDE
+# =========================================================
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Eclipse
 .classpath
 .factorypath
 .project
-.settings
+.settings/
 .springBeans
+
+# VS Code
+.vscode/
+
+# History
+.history/
+
+# macOS
+.DS_Store
+
+
+# =========================================================
+# Application
+# =========================================================
+
+logs/
+
+# Generated source
+.apt_generated/
+
+
+# =========================================================
+# Local / Database
+# =========================================================
+
 *.db
+
+
+# =========================================================
+# Archives
+# =========================================================
+
+*.zip
+*.tar.gz
+*.rar

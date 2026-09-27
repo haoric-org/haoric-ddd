@@ -1,0 +1,43 @@
+package org.haoric.ddd.starter.common.exception.ddd.infrastructure.data.record;
+
+import org.haoric.ddd.starter.common.exception.error.code.ErrorCode;
+
+/**
+ * DataRecordReturnValidateException
+ * <p>
+ * create 2025/08/21 01:30
+ * <p>
+ * update 2025/08/21 01:35
+ *
+ * @author Deng Haozhi
+ * @see org.haoric.ddd.starter.common.exception.ddd.infrastructure.data.record.DataRecordException
+ * @since 1.0.0
+ */
+public class DataRecordReturnValidateException extends org.haoric.ddd.starter.common.exception.ddd.infrastructure.data.record.DataRecordException {
+
+    private static final ErrorCode ERROR_CODE = ErrorCode.DDR8101;
+
+    public DataRecordReturnValidateException() {
+        super(null, ERROR_CODE, null, null);
+    }
+
+    public DataRecordReturnValidateException(String message) {
+        super(null, ERROR_CODE, message, null);
+    }
+
+    public DataRecordReturnValidateException(Throwable throwable) {
+        super(null, ERROR_CODE, null, throwable);
+    }
+
+    public DataRecordReturnValidateException(String method, String message) {
+        super(method, ERROR_CODE, message, null);
+    }
+
+    public DataRecordReturnValidateException(String message, Throwable throwable) {
+        super(null, ERROR_CODE, message, throwable);
+    }
+
+    public DataRecordReturnValidateException(String method, String message, Throwable throwable) {
+        super(method, ERROR_CODE, message, throwable);
+    }
+}

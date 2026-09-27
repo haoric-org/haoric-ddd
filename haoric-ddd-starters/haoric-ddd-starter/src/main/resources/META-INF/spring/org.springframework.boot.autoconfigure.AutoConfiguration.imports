@@ -1,0 +1,7 @@
+org.haoric.ddd.starter.common.config.aspect.AspectAutoConfiguration
+org.haoric.ddd.starter.common.config.data.DataAutoConfiguration
+org.haoric.ddd.starter.common.config.endless.HaoricAutoConfiguration
+org.haoric.ddd.starter.common.config.rest.RestAutoConfiguration
+org.haoric.ddd.starter.common.config.data.store.StoreConfiguration
+org.haoric.ddd.starter.common.config.thread.virtual.VirtualThreadAutoConfiguration
+org.haoric.ddd.starter.common.config.utils.UtilsAutoConfiguration

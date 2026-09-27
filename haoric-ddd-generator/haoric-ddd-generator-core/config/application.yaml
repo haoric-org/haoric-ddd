@@ -1,0 +1,65 @@
+#------------------------Project-------------------------
+haoric:
+  charset: ${haoric-charset} # 字符集
+  date-pattern: ${haoric-date-pattern} # 日期格式
+  date-time-pattern: ${haoric-date-time-pattern} # 日期时间格式
+  data-center-id: ${haoric-data-center-id} # 数据中心 ID
+  worker-id: ${haoric-worker-id} # 工作节点 ID
+  sidecar:
+    mesh-mode-enabled: ${haoric-sidecar-mesh-mode-enabled} # 是否启用 Service Mesh 模式
+    host: ${haoric-sidecar-host} # 边车主机地址
+    port: ${haoric-sidecar-port} # 边车端口
+#------------------------Server-------------------------
+server:
+  port: ${server-port} # 服务端口
+  undertow:
+    worker-threads: ${undertow-worker-threads} # 最大工作线程数
+    io-threads: ${undertow-io-threads}# IO 线程数
+    server-options:
+      idle-timeout: ${undertow-server-options-idle-timeout} # 连接超时时间（毫秒）
+      so-backlog: ${undertow-server-options-so-backlog} # 请求队列长度
+    max-http-header-size: ${undertow-max-http-header-size} # 最大请求头大小
+    buffer-cache-size: ${undertow-buffer-cache-size} # Servlet缓冲区大小
+    encoding: ${haoric-charset} # URI 编码
+  servlet:
+    context-path: /  # 默认 context
+  error:
+    whitelabel:
+      enabled: false # 禁用默认错误页面
+#------------------------Spring-------------------------
+spring:
+  application:
+    name: haoric-ddd-generator
+  main:
+    web-application-type: servlet # 项目类型为 servlet
+  profiles:
+    active: dev
+  freemarker:
+    enabled: true # 启用 Freemarker 模板引擎
+    template-loader-path: file:templates/freemarker/ # Freemarker 模板路径
+    suffix: .ftl # Freemarker 模板后缀
+    check-template-location: false #
+  mvc:
+    throw-exception-if-no-handler-found: true # 未找到请求处理器时，抛出异常
+  web:
+    resources:
+      add-mappings: false # 禁用默认静态资源映射
+  datasource:
+    driver-class-name: ${datasource-driver-class-name} # 数据库驱动类
+    url: ${datasource-url} # 数据库连接 URL
+    username: ${datasource-username}  # 数据库用户名
+    password: ${datasource-password}  # 数据库密码
+#------------------------Logging------------------------
+logging:
+  config: ${logging-config} # 日志配置文件
+#-----------------------Actuator------------------------
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+  server:
+    base-path: /actuator # 健康检查根路径

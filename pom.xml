@@ -4,94 +4,96 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.endless</groupId>
-    <artifactId>endless-ddd</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <groupId>org.haoric</groupId>
+    <artifactId>haoric-ddd</artifactId>
+    <version>2.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>endless-ddd</name>
-    <description>DDD architecture for Spring Boot</description>
+    <name>haoric-ddd</name>
+    <description>
+        面向 Spring Boot 的 DDD 框架与开发工具集 / DDD architecture for Spring Boot
+    </description>
 
-    <url>https://github.com/org-endless/endless-ddd</url>
-    <organization>
-        <name>Endless, Org.</name>
-        <url>https://github.com/org-endless</url>
-    </organization>
+    <url>https://github.com/org-haoric/haoric-ddd</url>
+    <inceptionYear>2024</inceptionYear>
+
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
             <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+            <distribution>repo</distribution>
         </license>
     </licenses>
+
     <developers>
         <developer>
-            <name>Endless</name>
-            <email>haozhi_deng@126.com</email>
-            <organization>Endless, Org.</organization>
-            <organizationUrl>https://github.com/org-endless</organizationUrl>
+            <id>haoric-haozhi</id>
+            <name>Deng Haozhi</name>
+            <url>https://github.com/haoric-haozhi</url>
+            <organization>haoric-org</organization>
+            <organizationUrl>https://github.com/haoric-org</organizationUrl>
+            <roles>
+                <role>developer</role>
+                <role>maintainer</role>
+            </roles>
         </developer>
     </developers>
+
     <scm>
         <connection>
-            scm:git:git://github.com/spring-projects/org-endless/endless-ddd.git
+            scm:git:git://github.com/spring-projects/org-haoric/haoric-ddd.git
         </connection>
         <developerConnection>
-            scm:git:ssh://git@github.com/org-endless/endless-ddd.git
+            scm:git:ssh://git@github.com/org-haoric/haoric-ddd.git
         </developerConnection>
-        <url>https://github.com/org-endless/endless-ddd</url>
+        <url>https://github.com/org-haoric/haoric-ddd</url>
     </scm>
 
     <modules>
-        <module>endless-ddd-generator</module>
-        <module>endless-ddd-starters</module>
-        <module>endless-ddd-sidecar</module>
+        <module>haoric-ddd-generator</module>
+        <module>haoric-ddd-starters</module>
+        <module>haoric-ddd-sidecar</module>
     </modules>
 
     <properties>
+
         <!-- Project -->
-        <java.version>21</java.version>
+        <java.version>25</java.version>
         <encoding>UTF-8</encoding>
         <project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${encoding}</project.reporting.outputEncoding>
-        <maven.compiler.encoding>${encoding}</maven.compiler.encoding>
-        <maven.compiler.source>${java.version}</maven.compiler.source>
-        <maven.compiler.target>${java.version}</maven.compiler.target>
-        <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
+
+        <!-- Maven -->
+        <maven.compiler.release>${java.version}</maven.compiler.release>
+        <maven.compiler.parameters>true</maven.compiler.parameters>
+        <maven-compiler-plugin.version>3.16.0</maven-compiler-plugin.version>
 
         <!-- Framework -->
-        <spring-boot.version>3.5.4</spring-boot.version>
-        <druid.version>1.2.27</druid.version>
-        <mybatis-plus.version>3.5.12</mybatis-plus.version>
-        <pagehelper.version>2.1.1</pagehelper.version>
-        <freemarker.version>2.3.34</freemarker.version>
-
-        <!-- Cloud -->
-        <spring-cloud.version>5.0.0-M1</spring-cloud.version>
-        <sentinel.version>2023.0.3.3</sentinel.version>
+        <spring-boot.version>4.1.1</spring-boot.version>
+        <druid.version>1.2.28</druid.version>
+        <mybatis-plus.version>3.5.17</mybatis-plus.version>
+        <pagehelper.version>4.1.1</pagehelper.version>
 
         <!-- Infrastructure -->
-        <minio.version>8.5.17</minio.version>
-        <mysql.version>9.4.0</mysql.version>
+        <minio.version>9.0.3</minio.version>
+        <okhttp.version>5.5.0</okhttp.version>
         <sqlite.version>3.50.3.0</sqlite.version>
 
         <!-- Utils -->
-        <jjwt.version>0.12.6</jjwt.version>
-        <bcprov.version>1.81</bcprov.version>
-        <fastjson2.version>2.0.58</fastjson2.version>
-        <snakeyaml.version>2.4</snakeyaml.version>
+        <bcprov.version>1.86</bcprov.version>
+        <fastjson2.version>2.0.65</fastjson2.version>
+        <snakeyaml.version>2.7</snakeyaml.version>
 
-        <!-- Dev -->
-        <lombok.version>1.18.38</lombok.version>
-        <springdoc.version>2.8.9</springdoc.version>
-        <therapi-javadoc.version>0.15.0</therapi-javadoc.version>
+        <!-- Development -->
+        <lombok.version>1.18.48</lombok.version>
     </properties>
 
     <!-- 依赖声明 -->
     <dependencyManagement>
         <dependencies>
-            <!-- Endless DDD -->
+            <!-- Haoric DDD -->
             <dependency>
-                <groupId>org.endless</groupId>
-                <artifactId>endless-ddd-starter</artifactId>
+                <groupId>org.haoric</groupId>
+                <artifactId>haoric-ddd-starter</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <!-- Framework -->
@@ -103,28 +105,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter</artifactId>
-                <version>${spring-boot.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.springframework.boot</groupId>
-                        <artifactId>spring-boot-starter-logging</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-web</artifactId>
-                <version>${spring-boot.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.springframework.boot</groupId>
-                        <artifactId>spring-boot-starter-tomcat</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
             <!-- Druid -->
             <dependency>
                 <groupId>com.alibaba</groupId>
@@ -134,7 +114,7 @@
             <!-- Mybatis Plus -->
             <dependency>
                 <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+                <artifactId>mybatis-plus-spring-boot4-starter</artifactId>
                 <version>${mybatis-plus.version}</version>
             </dependency>
             <!-- Page Helper -->
@@ -143,31 +123,24 @@
                 <artifactId>pagehelper-spring-boot-starter</artifactId>
                 <version>${pagehelper.version}</version>
             </dependency>
-            <!-- Cloud -->
-            <!-- Consul -->
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-consul-discovery</artifactId>
-                <version>${spring-cloud.version}</version>
-            </dependency>
-            <!-- Sentinel -->
-            <dependency>
-                <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
-                <version>${sentinel.version}</version>
-            </dependency>
+
             <!-- Infrastructure -->
             <!-- MinIO -->
             <dependency>
                 <groupId>io.minio</groupId>
                 <artifactId>minio</artifactId>
                 <version>${minio.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.squareup.okhttp3</groupId>
+                        <artifactId>okhttp</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
-            <!-- Mysql -->
             <dependency>
-                <groupId>com.mysql</groupId>
-                <artifactId>mysql-connector-j</artifactId>
-                <version>${mysql.version}</version>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp-jvm</artifactId>
+                <version>${okhttp.version}</version>
             </dependency>
             <!-- Sqlite -->
             <dependency>
@@ -175,13 +148,8 @@
                 <artifactId>sqlite-jdbc</artifactId>
                 <version>${sqlite.version}</version>
             </dependency>
+
             <!-- Utils -->
-            <!-- Jjwt -->
-            <dependency>
-                <groupId>io.jsonwebtoken</groupId>
-                <artifactId>jjwt-api</artifactId>
-                <version>${jjwt.version}</version>
-            </dependency>
             <!-- Bouncy Castle -->
             <dependency>
                 <groupId>org.bouncycastle</groupId>
@@ -194,7 +162,7 @@
                 <artifactId>fastjson2</artifactId>
                 <version>${fastjson2.version}</version>
             </dependency>
-            <!-- Snakeyaml -->
+            <!-- SnakeYAML -->
             <dependency>
                 <groupId>org.yaml</groupId>
                 <artifactId>snakeyaml</artifactId>
@@ -207,16 +175,6 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springdoc</groupId>
-                <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-                <version>${springdoc.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.therapi</groupId>
-                <artifactId>therapi-runtime-javadoc</artifactId>
-                <version>${therapi-javadoc.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -231,20 +189,14 @@
                     <configuration>
                         <annotationProcessorPaths>
                             <path>
-                                <groupId>com.github.therapi</groupId>
-                                <artifactId>therapi-runtime-javadoc-scribe</artifactId>
-                                <version>${therapi-javadoc.version}</version>
-                            </path>
-                            <path>
                                 <groupId>org.projectlombok</groupId>
                                 <artifactId>lombok</artifactId>
                                 <version>${lombok.version}</version>
                             </path>
                         </annotationProcessorPaths>
-                        <source>${java.version}</source>
-                        <target>${java.version}</target>
+                        <release>${maven.compiler.release}</release>
                         <encoding>${encoding}</encoding>
-                        <parameters>true</parameters>
+                        <parameters>${maven.compiler.parameters}</parameters>
                     </configuration>
                 </plugin>
                 <plugin>
